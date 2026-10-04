@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohd Rashid — Software Engineer · Distributed Systems & Agentic AI</title>
+  <meta name="description" content="Mohd Rashid — software engineer building backend & distributed systems, kernel-level networking with eBPF/XDP, and agentic AI. Projects, writing, experience and hackathons.">
+  <meta name="author" content="Mohd Rashid">
+  <meta name="theme-color" content="#fbfbf9">
+  <link rel="canonical" href="https://mohdrashid9678.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mohd Rashid — Software Engineer">
+  <meta property="og:description" content="Backend, distributed systems, eBPF and agentic AI. Projects, writing and experience.">
+  <meta property="og:url" content="https://mohdrashid9678.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/174307556?v=4">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    /* set theme before paint to avoid a flash */
+    (function () { try { var t = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohd Rashid",
+      "jobTitle": "Software Engineer",
+      "url": "https://mohdrashid9678.github.io/",
+      "sameAs": ["https://github.com/mohdrashid9678", "https://www.linkedin.com/in/rashidalam9678/"]
+    }
+  </script>
+</head>
+<body data-page="home" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" class="container">
+    <!-- Hero / intro (rendered from data.js) -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div></div>
+      <div><h1>Mohd Rashid</h1><p>Software Engineer — Backend · Distributed Systems · Agentic AI</p></div>
+    </section>
+
+    <!-- Updates (clean list without cards below it) -->
+    <section class="section" id="updates" aria-labelledby="updates-title">
+      <div class="section-head"><h2 id="updates-title">Recent Updates</h2></div>
+      <ul class="updates" id="updates-list"></ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-head"><h2 id="experience-title"><span class="num">01</span>Experience</h2></div>
+      <ol class="timeline" id="experience-list"></ol>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title"><span class="num">02</span>Projects</h2>
+        <a class="view-all" id="projects-all" href="projects.html">View all <span class="count"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="section-sub">Systems I've built to understand how things work under the hood.</p>
+      <div class="project-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="section-head">
+        <h2 id="writing-title"><span class="num">03</span>Writing</h2>
+        <a class="view-all" id="writing-all" href="writing.html">View all <span class="count"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="section-sub">Notes and deep-dives on engineering, systems and AI — published on Substack.</p>
+      <ul class="post-list" id="writing-list"></ul>
+    </section>
+
+    <!-- Hackathons -->
+    <section class="section" id="hackathons" aria-labelledby="hackathons-title">
+      <div class="section-head"><h2 id="hackathons-title"><span class="num">04</span>Hackathons</h2></div>
+      <ol class="hack-list" id="hackathon-list"></ol>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card" id="contact-card"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
