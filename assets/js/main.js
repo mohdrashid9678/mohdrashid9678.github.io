@@ -83,7 +83,7 @@
     const meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", t === "dark" ? "#121211" : "#f7f6f2");
   }
-  applyTheme(store.get("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  applyTheme(store.get("theme") || "light"); // light by default; the toggle's saved choice wins
 
   /* -------------------------------------------------- EMPTY SECTIONS */
   // Remove home sections whose data is empty, so nav and layout stay honest.
@@ -96,8 +96,8 @@
     const el = $("#site-header");
     if (!el) return;
     const nav = [
-      ["Work", "projects"],
       ["Experience", "experience"],
+      ["Work", "projects"],
       ["Writing", "writing"],
       D.hackathons?.length ? ["Hackathons", "hackathons"] : null,
       ["Contact", "contact"],
@@ -182,22 +182,6 @@
       </aside>`;
   }
 
-  /* ------------------------------------------------------ HIGHLIGHTS */
-  function renderHighlights() {
-    const el = $("#highlights");
-    if (!el) return;
-    if (!D.highlights?.length) return el.remove();
-    el.innerHTML = `<ul class="stats-strip">${D.highlights
-      .map(
-        (h) => `<li class="reveal">
-          <span class="stat-value">${esc(h.value)}${h.unit ? `<small>${esc(h.unit)}</small>` : ""}</span>
-          <span class="stat-label">${esc(h.label)}</span>
-          ${h.source ? `<span class="stat-source">${esc(h.source)}</span>` : ""}
-        </li>`
-      )
-      .join("")}</ul>`;
-  }
-
   /* --------------------------------------------------------- UPDATES */
   function renderUpdates() {
     const el = $("#updates-list");
@@ -219,7 +203,7 @@
         <span class="entry-when">${range(x.start, x.end)}</span>
         <div class="entry-body">
           <h3>${esc(x.role)} <span class="at">at</span> <span class="org">${org}</span></h3>
-          ${x.location ? `<p class="entry-sub">${esc(x.location)}</p>` : ""}
+          ${x.summary || x.location ? `<p class="entry-sub">${[x.summary, x.location].filter(Boolean).map(esc).join(" · ")}</p>` : ""}
           ${points.length ? `<ul class="entry-points">${points.map((pt) => `<li>${pt}</li>`).join("")}</ul>` : ""}
           ${tagList(x.tags)}
         </div>
@@ -230,7 +214,8 @@
       return `<li class="entry edu reveal">
         <span class="entry-when">${esc(e.start)} – ${esc(e.end)}</span>
         <div class="entry-body">
-          <h3>${esc(e.degree)}${school ? ` <span class="at">·</span> <span class="org">${school}</span>` : ""}</h3>
+          <h3>${esc(e.degree)}</h3>
+          ${school ? `<p class="entry-sub">${school}</p>` : ""}
           ${e.details ? `<p class="entry-sub">${esc(e.details)}</p>` : ""}
         </div>
       </li>`;
@@ -404,6 +389,7 @@
       }
       <ul class="contact-links">
         ${others.map((l) => `<li><a href="${esc(l.url)}"${ext(l.url)} id="contact-${l.id}">${ICONS[l.id] || ""}<span>${esc(l.label)}</span><small>${esc(l.handle)}</small></a></li>`).join("")}
+        ${D.profile.resume ? `<li><a href="${esc(D.profile.resume)}" id="contact-resume" download>${ICONS.download}<span>Résumé</span><small>PDF</small></a></li>` : ""}
       </ul>`;
 
     const btn = $("#copy-email");
@@ -579,7 +565,6 @@
   /* ------------------------------------------------------------ BOOT */
   renderHeader();
   renderHero();
-  renderHighlights();
   renderUpdates();
   renderExperience();
   renderHomeLists();

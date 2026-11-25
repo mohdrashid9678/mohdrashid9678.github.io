@@ -6,7 +6,7 @@ Plain HTML/CSS/JS, no build step, hosted on GitHub Pages.
 ## Structure
 
 ```
-index.html            Home: intro, highlights, recent updates, selected work, experience + toolbox,
+index.html            Home: intro, recent updates, experience + toolbox, selected work,
                       writing, problem solving, hackathons (hidden while empty), contact
 projects.html         All projects (search + tag filter, state kept in the URL)
 writing.html          All Substack articles (search + tag filter; Substack card while empty)
@@ -25,7 +25,6 @@ Edit `assets/js/data.js`; every section is driven from it. Search for `TODO` to 
 - **Add an article:** append to `articles` (`title`, `description`, `tags`, `date`, `url` → Substack post). While the list is empty, the Writing section shows a "Read on Substack" card.
 - **Hackathons:** add entries to `hackathons` and the section and nav link appear automatically.
 - **Competitive programming:** set `stat` on the LeetCode / AtCoder links (e.g. `"Rating 1650 · Knight"`) to show it on the cards.
-- **Highlights strip:** `highlights` holds the four numbers under the hero; keep each one backed by a project.
 - **Photo:** save a square picture as `assets/img/profile.jpg` and set `profile.photo` to that path.
 - **Résumé:** drop the PDF in `assets/` and set `profile.resume`.
 

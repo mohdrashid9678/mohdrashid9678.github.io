@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mohd Rashid — Software Engineer · Backend, Distributed Systems & AI Agents</title>
-  <meta name="description" content="Mohd Rashid — software engineer at Robonito building backend and distributed systems in Go, kernel-level networking with eBPF/XDP, and AI agents. Projects, writing and experience.">
+  <meta name="description" content="Mohd Rashid — software engineer at Robonito building no-code test automation, LangGraph AI agents and distributed systems in Go, plus kernel-level networking with eBPF/XDP.">
   <meta name="author" content="Mohd Rashid">
   <meta name="theme-color" content="#f7f6f2">
   <link rel="canonical" href="https://mohdrashid9678.github.io/">
@@ -23,8 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
-    /* set theme before paint to avoid a flash */
-    (function () { try { var t = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+    /* light by default; a saved choice from the toggle wins. Set before paint to avoid a flash. */
+    (function () { try { var t = localStorage.getItem("theme") || "light"; document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
   </script>
   <script type="application/ld+json">
     {
@@ -32,6 +32,7 @@
       "@type": "Person",
       "name": "Mohd Rashid",
       "jobTitle": "Software Engineer",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Aligarh Muslim University" },
       "worksFor": { "@type": "Organization", "name": "Robonito" },
       "address": { "@type": "PostalAddress", "addressLocality": "Aligarh", "addressCountry": "IN" },
       "url": "https://mohdrashid9678.github.io/",
@@ -57,12 +58,9 @@
       <div class="hero-text">
         <p class="eyebrow">Software Engineer at Robonito</p>
         <h1>Mohd Rashid</h1>
-        <p class="lede">I build backend and distributed systems, and like to understand them all the way down to the kernel.</p>
+        <p class="lede">I work on backend systems and AI agents.</p>
       </div>
     </section>
-
-    <!-- Numbers strip -->
-    <div class="container highlights" id="highlights" aria-label="Highlights"></div>
 
     <div class="container sections">
       <!-- Updates -->
@@ -71,17 +69,6 @@
           <h2 id="updates-title">Recently</h2>
         </header>
         <div class="section-body"><ol class="updates" id="updates-list"></ol></div>
-      </section>
-
-      <!-- Projects -->
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <header class="section-head">
-          <h2 id="projects-title">Selected work</h2>
-          <p class="section-sub">Systems I've built to understand how things work under the hood.</p>
-          <a class="view-all" id="projects-all" href="projects.html">All projects <span class="count"></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </header>
-        <div class="section-body" id="projects-grid"></div>
       </section>
 
       <!-- Experience -->
@@ -94,6 +81,17 @@
           <div id="experience-list"></div>
           <div id="skills"></div>
         </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <header class="section-head">
+          <h2 id="projects-title">Selected work</h2>
+          <p class="section-sub">Systems I've built to understand how things work under the hood.</p>
+          <a class="view-all" id="projects-all" href="projects.html">All projects <span class="count"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </header>
+        <div class="section-body" id="projects-grid"></div>
       </section>
 
       <!-- Writing -->

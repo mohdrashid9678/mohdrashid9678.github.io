@@ -26,29 +26,21 @@ window.PORTFOLIO = {
     location: "Aligarh, India",
     // Drop a square photo at assets/img/profile.jpg and point `photo` at it to override.
     photo: "https://avatars.githubusercontent.com/u/174307556?v=4&s=400",
-    resume: "", // TODO: e.g. "assets/Mohd_Rashid_Resume.pdf" (leave "" to hide)
+    resume: "assets/Mohd_Rashid_Resume.pdf", // leave "" to hide the résumé buttons
     // Shown as a small "open to" note in the hero. Set to "" to hide.
     openTo: "Backend, Platform, Distributed Systems & AI Engineering roles",
     // Large opening line under the name.
-    lede: "I build backend and distributed systems, and like to understand them all the way down to the kernel.",
-    // Body paragraphs (HTML allowed).
+    lede: "I work on backend systems and AI agents.",
+    // Body paragraphs (HTML allowed). Keep it plain and factual.
     intro: [
-      "I'm a software engineer focused on <strong>backend engineering, distributed systems and AI agents</strong>. Day to day I build scalable, observable services with <strong>Go, TypeScript, PostgreSQL, Redis and AWS</strong>, and I go to first principles with <strong>C and eBPF/XDP</strong> when I want to know what the machine is actually doing.",
-      "Lately I've been engineering autonomous LLM agents that plan, use tools and act reliably in production, writing deep-dives on Substack, and practising competitive programming.",
+      "I'm a software engineer at Robonito, where I work on a no-code test automation platform for mobile, web and API testing. I build its backend services and the LangGraph agents that turn written instructions into test steps.",
+      "I mainly use Go and TypeScript, with PostgreSQL, Redis and AWS. In side projects I also write C and eBPF. I write on Substack and do competitive programming.",
     ],
   },
 
-  /* ------------------------------------------------------- HIGHLIGHTS */
-  // The numbers strip under the hero. Each one should be backed by a project.
-  highlights: [
-    { value: "50K+", unit: "req/s", label: "sustained throughput", source: "xlink" },
-    { value: "<10", unit: "ms", label: "p95 redirect latency", source: "xlink" },
-    { value: "O(1)", unit: "", label: "packet routing inside the NIC driver", source: "XDP-LB" },
-    { value: "0", unit: "net/http", label: "HTTP/1.1 parsed straight off raw TCP", source: "rhttp" },
-  ],
-
   /* --------------------------------------------------------- UPDATES */
   updates: [
+    { date: "2024-06", text: 'Joined <a href="https://robonito.com" target="_blank" rel="noopener">Robonito</a> as a Software Engineer, building no-code test automation and AI agents.' },
     { date: "2026-10", text: "Launched this portfolio: projects, writing and problem solving in one place." },
     { date: "2026-08", text: 'Released <a href="https://github.com/mohdrashid9678/xlink" target="_blank" rel="noopener">xlink</a>, a Go URL shortener sustaining <strong>50K+ req/s</strong> with p95 under 10 ms.' },
     { date: "2026-06", text: 'Built <a href="https://github.com/mohdrashid9678/xdb-lb" target="_blank" rel="noopener">XDP-LB</a>, a kernel-level Layer 4 load balancer on eBPF/XDP.' },
@@ -63,13 +55,19 @@ window.PORTFOLIO = {
       company: "Robonito",
       url: "https://robonito.com",
       location: "",
-      start: "", // TODO: e.g. "2024-07"
+      start: "2024-06",
       end: "",
+      summary: "No-code test automation for mobile, web and API, with AI agents at its core.",
       points: [
-        // TODO: 2–3 bullets on what you built and its impact, e.g.
-        // "Designed … that cut p95 latency from X to Y."
+        "Architected a <strong>no-code mobile automation platform</strong> for Android and iOS, letting 10+ QA teams design, run and manage test workflows visually without writing code.",
+        "Engineered <strong>LangGraph-based autonomous agents</strong> that turn natural-language instructions into executable workflows, adapt to UI changes, and recover from failed steps through LLM-driven reasoning.",
+        "Designed a 4-stage <strong>distributed execution pipeline</strong> (scheduling, environment provisioning, execution, result aggregation) on stateless Redis/BullMQ workers, running web, mobile and API suites in parallel and cutting average suite <strong>runtime by 50%</strong>.",
+        "Built an XML-based selector engine with a deterministic <strong>auto-healer</strong> that repairs broken selectors from spatial UI relationships, reducing cross-platform flakiness by <strong>40%</strong>.",
+        "Designed a distributed notification system on <strong>WebSockets and Redis Pub/Sub</strong> that streams execution lifecycle events to Electron desktop clients in real time.",
+        "Designed and implemented <strong>billing and subscription infrastructure</strong>: usage tracking, plan enforcement, subscription validation and customer plan management.",
+        "Automated cross-platform build and release pipelines for macOS, Windows and Linux, cutting release time from <strong>over two hours to a few minutes</strong>.",
       ],
-      tags: [],
+      tags: ["LangGraph", "Redis", "BullMQ", "WebSockets", "Electron", "CI/CD"],
     },
   ],
 
@@ -77,8 +75,8 @@ window.PORTFOLIO = {
   education: [
     {
       degree: "B.Tech, Computer Science & Engineering",
-      school: "", // TODO: your university
-      url: "",
+      school: "Zakir Husain College of Engineering & Technology, Aligarh Muslim University",
+      url: "https://www.amu.ac.in/",
       start: "2020",
       end: "2024",
       details: "",
@@ -87,12 +85,13 @@ window.PORTFOLIO = {
 
   /* --------------------------------------------------------- TOOLBOX */
   skills: [
-    { group: "Languages", items: ["Go", "TypeScript", "C", "C++"] },
-    { group: "Data", items: ["PostgreSQL", "Redis", "Redis Streams"] },
-    { group: "Infrastructure", items: ["AWS", "Docker", "Nginx", "Linux"] },
-    { group: "Observability", items: ["Prometheus", "OpenTelemetry", "Grafana", "Jaeger"] },
-    { group: "Systems", items: ["eBPF", "XDP", "TCP/IP", "HTTP/1.1"] },
-    { group: "AI", items: ["LLM agents", "Tool use", "Evals"] },
+    { group: "Languages", items: ["Go", "TypeScript", "JavaScript", "C", "C++", "Python", "SQL", "Bash"] },
+    { group: "Backend", items: ["Gin", "Chi", "Node.js", "Express", "NestJS", "REST", "WebSockets", "BullMQ"] },
+    { group: "Data", items: ["PostgreSQL", "MongoDB", "Redis", "Redis Streams", "Redis Pub/Sub"] },
+    { group: "Infrastructure", items: ["AWS (VPC, EC2, ECS, ALB, IAM)", "Docker", "Kubernetes", "Nginx"] },
+    { group: "Observability", items: ["Prometheus", "OpenTelemetry", "Jaeger", "pprof", "k6"] },
+    { group: "Systems & AI", items: ["eBPF/XDP", "cilium/ebpf", "LangGraph", "LLM agents"] },
+    { group: "Tools", items: ["Git", "GitHub Actions"] },
   ],
 
   /* -------------------------------------------------------- PROJECTS */
@@ -104,11 +103,12 @@ window.PORTFOLIO = {
       title: "xlink",
       tagline: "URL shortener built for throughput",
       description:
-        "A fast, scalable URL shortener in Go. Redirects are served from an L1 TinyLFU cache backed by L2 Redis, with singleflight coalescing to stop cache stampedes. Click analytics stream through Redis Streams into PostgreSQL in batches, and the whole path is traced with OpenTelemetry.",
+        "A URL shortener and clickstream analytics engine in Go. Redirects are served from an in-memory TinyLFU cache backed by Redis, with singleflight to stop stampedes. Clicks flow through Redis Streams into PostgreSQL in batches, so analytics never add latency to a redirect.",
       highlights: [
-        "Multi-tier caching: Ristretto (TinyLFU) in-process, Redis behind it",
-        "Async analytics: Redis Streams → batched PostgreSQL writes",
-        "Prometheus metrics, Jaeger tracing, /livez and /readyz probes",
+        "Two-tier caching (TinyLFU + Redis) with Redis Pub/Sub cross-instance invalidation",
+        "Async clickstream: Redis Streams → batch bulk-inserts into PostgreSQL",
+        "Prometheus RED metrics, Jaeger tracing, pprof and deep /readyz probes",
+        "Multi-AZ AWS: private subnets, NAT egress, ALB, Nginx pooling and kernel socket tuning",
       ],
       stats: [
         { label: "Throughput", value: "50,000+ req/s" },
@@ -117,7 +117,7 @@ window.PORTFOLIO = {
         { label: "p99", value: "< 50 ms" },
         { label: "Cache hit", value: "sub-ms" },
       ],
-      statsNote: "3× c6g.large behind an AWS ALB",
+      statsNote: "k6 · 3× c6g.large behind an AWS ALB",
       metric: "50K+ req/s · p95 < 10 ms",
       language: "Go",
       tags: ["Go", "Redis", "PostgreSQL", "AWS", "OpenTelemetry"],
@@ -129,7 +129,7 @@ window.PORTFOLIO = {
       title: "XDP-LB",
       tagline: "Layer 4 load balancer in the NIC driver",
       description:
-        "A from-scratch L4 load balancer that routes packets inside the NIC driver with eBPF/XDP. The C data plane hashes the 5-tuple onto a consistent-hash ring for TCP stickiness; a Go control plane loads config and streams live kernel telemetry.",
+        "A from-scratch L4 load balancer that routes packets inside the NIC driver with eBPF/XDP, bypassing the kernel network stack. The C data plane hashes the 5-tuple onto a consistent-hash ring for TCP stickiness; a Go control plane (cilium/ebpf) detects interfaces, orchestrates backends and polls kernel telemetry lock-free from BPF array maps.",
       metric: "O(1) in-kernel routing",
       language: "Go",
       tags: ["eBPF", "XDP", "C", "Go", "Networking"],
