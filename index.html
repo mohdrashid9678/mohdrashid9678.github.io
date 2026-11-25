@@ -23,8 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
-    /* set theme before paint to avoid a flash */
-    (function () { try { var t = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+    /* light by default; a saved choice from the toggle wins. Set before paint to avoid a flash. */
+    (function () { try { var t = localStorage.getItem("theme") || "light"; document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
   </script>
   <script type="application/ld+json">
     {
@@ -58,12 +58,9 @@
       <div class="hero-text">
         <p class="eyebrow">Software Engineer at Robonito</p>
         <h1>Mohd Rashid</h1>
-        <p class="lede">I build backend and distributed systems, and like to understand them all the way down to the kernel.</p>
+        <p class="lede">I work on backend systems and AI agents.</p>
       </div>
     </section>
-
-    <!-- Numbers strip -->
-    <div class="container highlights" id="highlights" aria-label="Highlights"></div>
 
     <div class="container sections">
       <!-- Updates -->

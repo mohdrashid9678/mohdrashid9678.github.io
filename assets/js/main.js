@@ -83,7 +83,7 @@
     const meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", t === "dark" ? "#121211" : "#f7f6f2");
   }
-  applyTheme(store.get("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  applyTheme(store.get("theme") || "light"); // light by default; the toggle's saved choice wins
 
   /* -------------------------------------------------- EMPTY SECTIONS */
   // Remove home sections whose data is empty, so nav and layout stay honest.
@@ -180,22 +180,6 @@
           ${facts.map(([k, v], i) => `<div${i === facts.length - 1 && p.openTo ? ' class="open"' : ""}><dt>${k}</dt><dd>${v}</dd></div>`).join("")}
         </dl>
       </aside>`;
-  }
-
-  /* ------------------------------------------------------ HIGHLIGHTS */
-  function renderHighlights() {
-    const el = $("#highlights");
-    if (!el) return;
-    if (!D.highlights?.length) return el.remove();
-    el.innerHTML = `<ul class="stats-strip">${D.highlights
-      .map(
-        (h) => `<li class="reveal">
-          <span class="stat-value">${esc(h.value)}${h.unit ? `<small>${esc(h.unit)}</small>` : ""}</span>
-          <span class="stat-label">${esc(h.label)}</span>
-          ${h.source ? `<span class="stat-source">${esc(h.source)}</span>` : ""}
-        </li>`
-      )
-      .join("")}</ul>`;
   }
 
   /* --------------------------------------------------------- UPDATES */
@@ -581,7 +565,6 @@
   /* ------------------------------------------------------------ BOOT */
   renderHeader();
   renderHero();
-  renderHighlights();
   renderUpdates();
   renderExperience();
   renderHomeLists();

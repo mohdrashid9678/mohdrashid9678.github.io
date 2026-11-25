@@ -30,22 +30,13 @@ window.PORTFOLIO = {
     // Shown as a small "open to" note in the hero. Set to "" to hide.
     openTo: "Backend, Platform, Distributed Systems & AI Engineering roles",
     // Large opening line under the name.
-    lede: "I build backend and distributed systems, and like to understand them all the way down to the kernel.",
-    // Body paragraphs (HTML allowed).
+    lede: "I work on backend systems and AI agents.",
+    // Body paragraphs (HTML allowed). Keep it plain and factual.
     intro: [
-      "I'm a software engineer focused on <strong>backend engineering, distributed systems and AI agents</strong>. Day to day I build scalable, observable services with <strong>Go, TypeScript, PostgreSQL, Redis and AWS</strong>, and I go to first principles with <strong>C and eBPF/XDP</strong> when I want to know what the machine is actually doing.",
-      "At <strong>Robonito</strong> I architected a no-code mobile automation platform for Android and iOS, and built the <strong>LangGraph agents</strong> behind it that turn plain-English instructions into test workflows and recover from failed steps on their own. Outside work I write deep-dives on Substack and practise competitive programming.",
+      "I'm a software engineer at Robonito, where I work on a no-code test automation platform for mobile, web and API testing. I build its backend services and the LangGraph agents that turn written instructions into test steps.",
+      "I mainly use Go and TypeScript, with PostgreSQL, Redis and AWS. In side projects I also write C and eBPF. I write on Substack and do competitive programming.",
     ],
   },
-
-  /* ------------------------------------------------------- HIGHLIGHTS */
-  // The numbers strip under the hero. Each one should be backed by real work.
-  highlights: [
-    { value: "50K+", unit: "req/s", label: "sustained redirect throughput, validated with k6", source: "xlink" },
-    { value: "50", unit: "%", label: "shorter average test-suite runtime from a distributed execution pipeline", source: "Robonito" },
-    { value: "40", unit: "%", label: "less cross-platform test flakiness with a self-healing selector engine", source: "Robonito" },
-    { value: "O(1)", unit: "", label: "packet routing inside the NIC driver with eBPF/XDP", source: "XDP-LB" },
-  ],
 
   /* --------------------------------------------------------- UPDATES */
   updates: [
