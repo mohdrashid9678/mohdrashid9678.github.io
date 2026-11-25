@@ -197,11 +197,21 @@ window.PORTFOLIO = {
   ],
 
   /* -------------------------------------------------------- ARTICLES */
-  // Each article links straight to Substack. Until this has entries the
-  // Writing section shows a "Read on Substack" card instead of a list.
-  // Example:
-  // { title: "…", description: "…", tags: ["Go"], date: "2026-11-20", url: "https://rashidalam9678.substack.com/p/…" },
-  articles: [],
+  // Each article links straight to Substack. With an empty list the Writing
+  // section shows only the "Read on Substack" card.
+  // `upcoming: true` shows "Coming soon" instead of a date and lists it first.
+  // When you publish: set the real title/description, `date` (e.g. "2026-12-10"),
+  // the post's `url`, and delete `upcoming`.
+  articles: [
+    {
+      title: "How xlink serves 50K requests per second",
+      description: "The caching, request coalescing and async analytics behind my Go URL shortener, and what the k6 load tests showed.",
+      tags: ["Go", "System Design", "Performance"],
+      date: "",
+      url: "https://substack.com/@rashidalam9678", // replace with the post URL
+      upcoming: true, // sample — remove when the article is published
+    },
+  ],
 
   /* ------------------------------------------------------ HACKATHONS */
   // Leave empty to hide the section. Example:

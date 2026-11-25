@@ -22,7 +22,7 @@ Edit `assets/js/data.js`; every section is driven from it. Search for `TODO` to 
 
 - **Featured projects:** `pinned: true` puts a project on the home page, in the order listed (keep it in sync with your GitHub pins). The first pinned project gets the large card; its `stats` render as the load-test table.
 - **Add a project:** append to `projects` (`title`, `tagline`, `description`, `language`, `tags`, `date`, `url`, optional `metric` / `status`).
-- **Add an article:** append to `articles` (`title`, `description`, `tags`, `date`, `url` → Substack post). While the list is empty, the Writing section shows a "Read on Substack" card.
+- **Add an article:** append to `articles` (`title`, `description`, `tags`, `date`, `url` → Substack post). `upcoming: true` shows "Coming soon" instead of a date; the current entry is a sample, so when your first post is out, replace its title/description/url, set `date` and delete `upcoming`.
 - **Hackathons:** add entries to `hackathons` and the section and nav link appear automatically.
 - **Competitive programming:** set `stat` on the LeetCode / AtCoder links (e.g. `"Rating 1650 · Knight"`) to show it on the cards.
 - **Photo:** save a square picture as `assets/img/profile.jpg` and set `profile.photo` to that path.

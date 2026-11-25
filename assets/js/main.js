@@ -65,6 +65,8 @@
   // Pinned projects keep their data.js order (= GitHub pin order); the rest follow, newest first.
   const pinIndex = (p) => (p.pinned ? D.projects.indexOf(p) : Infinity);
   const projectOrder = (a, b) => pinIndex(a) - pinIndex(b) || byDateDesc(a, b);
+  // Upcoming articles first, then newest first.
+  const articleOrder = (a, b) => (b.upcoming ? 1 : 0) - (a.upcoming ? 1 : 0) || byDateDesc(a, b);
 
   const page = document.body.dataset.page;
   const isHome = page === "home";
@@ -273,7 +275,7 @@
   const postRow = (a) => `
     <li class="post reveal">
       <a class="post-link" href="${esc(a.url)}"${ext(a.url)}>
-        <time datetime="${esc(a.date)}">${fmtDate(a.date, "long")}</time>
+        ${a.upcoming || !a.date ? `<span class="post-when soon">Coming soon</span>` : `<time class="post-when" datetime="${esc(a.date)}">${fmtDate(a.date, "long")}</time>`}
         <div>
           <h3>${esc(a.title)}</h3>
           ${a.description ? `<p>${esc(a.description)}</p>` : ""}
@@ -312,8 +314,10 @@
     }
     const pl = $("#writing-list");
     if (pl) {
-      const all = [...D.articles].sort(byDateDesc);
-      pl.innerHTML = all.length ? `<ul class="post-list">${all.slice(0, 5).map(postRow).join("")}</ul>` : substackCard();
+      const all = [...D.articles].sort(articleOrder);
+      pl.innerHTML = all.length
+        ? `<ul class="post-list">${all.slice(0, 5).map(postRow).join("")}</ul><div class="writing-cta">${substackCard()}</div>`
+        : substackCard();
       const more = $("#writing-all");
       if (more) {
         more.querySelector(".count").textContent = all.length;
@@ -444,7 +448,7 @@
   function renderListPage(kind) {
     const listEl = $("#list");
     if (!listEl) return;
-    const items = kind === "projects" ? [...D.projects].sort(projectOrder) : [...D.articles].sort(byDateDesc);
+    const items = kind === "projects" ? [...D.projects].sort(projectOrder) : [...D.articles].sort(articleOrder);
     const toolbar = $(".toolbar");
 
     if (!items.length) {
@@ -465,6 +469,7 @@
     let active = params.get("tag") || "";
     let query = params.get("q") || "";
 
+    if (toolbar) toolbar.hidden = items.length < 3; // filters only help once there are a few items
     const search = $("#search");
     const tagBar = $("#tag-filter");
     const count = $("#result-count");
@@ -488,7 +493,7 @@
       } else if (kind === "projects") {
         listEl.innerHTML = `<div class="card-grid">${filtered.map(projectCard).join("")}</div>`;
       } else {
-        listEl.innerHTML = `<ul class="post-list">${filtered.map(postRow).join("")}</ul>`;
+        listEl.innerHTML = `<ul class="post-list">${filtered.map(postRow).join("")}</ul><div class="writing-cta">${substackCard()}</div>`;
       }
       const sp = new URLSearchParams();
       if (active) sp.set("tag", active);

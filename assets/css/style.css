@@ -463,7 +463,9 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
 .post { border-top: 1px solid var(--rule); }
 .post:first-child { border-top: 0; }
 .post-link { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 20px; padding: 20px 0; }
-.post time { font-family: var(--mono); font-size: 12.5px; color: var(--faint); padding-top: 6px; }
+.post .post-when { font-family: var(--mono); font-size: 12.5px; color: var(--faint); padding-top: 6px; }
+.post .post-when.soon { color: var(--accent); }
+.writing-cta { margin-top: 28px; }
 .post h3 { margin: 0 0 6px; font-family: var(--serif); font-weight: 400; font-size: 25px; line-height: 1.15; transition: color 0.2s ease; }
 .post p { margin: 0 0 10px; color: var(--muted); font-size: 14.5px; }
 .post-link:hover h3 { color: var(--accent); }
@@ -649,7 +651,7 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
   .newsletter { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
   .newsletter .btn { justify-self: start; }
   .post-link { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; }
-  .post time { grid-column: 1 / -1; padding: 0; }
+  .post .post-when { grid-column: 1 / -1; padding: 0; }
 }
 
 @media (max-width: 560px) {
