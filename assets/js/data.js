@@ -34,7 +34,8 @@ window.PORTFOLIO = {
     // Body paragraphs (HTML allowed). Keep it plain and factual.
     intro: [
       "I'm a software engineer at Robonito, where I work on a no-code test automation platform for mobile, web and API testing. I build its backend services and the LangGraph agents that turn written instructions into test steps.",
-      "I mainly use Go and TypeScript, with PostgreSQL, Redis and AWS. In side projects I also write C and eBPF. I write on Substack and do competitive programming.",
+      "I'm interested in scalable backend systems, distributed systems and reliable AI agents. I mainly use Go and TypeScript, with PostgreSQL, Redis and AWS, and in side projects I also write C and eBPF.",
+      'I love solving algorithm problems on <a href="https://atcoder.jp/users/mohdrashid9678" target="_blank" rel="noopener noreferrer">AtCoder</a> and <a href="https://leetcode.com/u/rashidalam9678/" target="_blank" rel="noopener noreferrer">LeetCode</a>. I also write on <a href="https://substack.com/@rashidalam9678" target="_blank" rel="noopener noreferrer">Substack</a>.',
     ],
   },
 
