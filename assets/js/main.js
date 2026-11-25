@@ -96,8 +96,8 @@
     const el = $("#site-header");
     if (!el) return;
     const nav = [
-      ["Work", "projects"],
       ["Experience", "experience"],
+      ["Work", "projects"],
       ["Writing", "writing"],
       D.hackathons?.length ? ["Hackathons", "hackathons"] : null,
       ["Contact", "contact"],
@@ -219,7 +219,7 @@
         <span class="entry-when">${range(x.start, x.end)}</span>
         <div class="entry-body">
           <h3>${esc(x.role)} <span class="at">at</span> <span class="org">${org}</span></h3>
-          ${x.location ? `<p class="entry-sub">${esc(x.location)}</p>` : ""}
+          ${x.summary || x.location ? `<p class="entry-sub">${[x.summary, x.location].filter(Boolean).map(esc).join(" · ")}</p>` : ""}
           ${points.length ? `<ul class="entry-points">${points.map((pt) => `<li>${pt}</li>`).join("")}</ul>` : ""}
           ${tagList(x.tags)}
         </div>
@@ -230,7 +230,8 @@
       return `<li class="entry edu reveal">
         <span class="entry-when">${esc(e.start)} – ${esc(e.end)}</span>
         <div class="entry-body">
-          <h3>${esc(e.degree)}${school ? ` <span class="at">·</span> <span class="org">${school}</span>` : ""}</h3>
+          <h3>${esc(e.degree)}</h3>
+          ${school ? `<p class="entry-sub">${school}</p>` : ""}
           ${e.details ? `<p class="entry-sub">${esc(e.details)}</p>` : ""}
         </div>
       </li>`;
@@ -404,6 +405,7 @@
       }
       <ul class="contact-links">
         ${others.map((l) => `<li><a href="${esc(l.url)}"${ext(l.url)} id="contact-${l.id}">${ICONS[l.id] || ""}<span>${esc(l.label)}</span><small>${esc(l.handle)}</small></a></li>`).join("")}
+        ${D.profile.resume ? `<li><a href="${esc(D.profile.resume)}" id="contact-resume" download>${ICONS.download}<span>Résumé</span><small>PDF</small></a></li>` : ""}
       </ul>`;
 
     const btn = $("#copy-email");

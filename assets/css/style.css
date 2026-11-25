@@ -426,12 +426,12 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
 .metric::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
 /* ------------------------------------------------- EXPERIENCE / LISTS */
-.split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 56px; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; }
 .split .list-label ~ .list-label { margin-top: 40px; }
 
 .entries { list-style: none; margin: 0; padding: 0; }
-.entry { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 20px; padding: 16px 0; border-top: 1px solid var(--rule); }
-.entry:has(.badge) { grid-template-columns: 110px minmax(0, 1fr) auto; }
+.entry { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.entry:has(.badge) { grid-template-columns: 150px minmax(0, 1fr) auto; }
 .entry-when { font-family: var(--mono); font-size: 12.5px; color: var(--faint); padding-top: 3px; white-space: nowrap; }
 .entry.current .entry-when { color: var(--ok); }
 .entry.current .entry-when::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%; background: currentColor; vertical-align: 2px; }
@@ -440,12 +440,14 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
 .entry .org a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--rule-strong); }
 .entry .org a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .entry-sub { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+.entry-sub a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--rule-strong); }
+.entry-sub a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .entry-points { margin: 10px 0 12px; padding-left: 18px; color: var(--ink-2); font-size: 14.5px; }
 .entry-points li { margin: 4px 0; }
 .entry-points li::marker { color: var(--faint); }
 .entry .tags { margin-top: 10px; }
 
-.toolbox { margin: 0; }
+.toolbox { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
 .toolbox > div { padding: 14px 0; border-top: 1px solid var(--rule); }
 .toolbox dt { margin-bottom: 6px; font-size: 13px; color: var(--muted); }
 .toolbox dd { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 0; }
@@ -643,7 +645,7 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
   .stats-strip li:nth-child(n + 3) { border-top: 1px solid var(--rule); }
   .feature { grid-template-columns: 1fr; }
   .feature-stats { border-left: 0; border-top: 1px solid var(--rule); border-radius: 0 0 18px 18px; }
-  .split { grid-template-columns: 1fr; gap: 40px; }
+  .split { gap: 40px; }
 }
 
 @media (max-width: 760px) {
@@ -686,6 +688,7 @@ button.tag[aria-pressed="true"] span { color: color-mix(in srgb, var(--bg) 65%, 
   .feature h3 { font-size: 34px; }
   .card { padding: 22px 20px 20px; }
   .cp-grid { grid-template-columns: 1fr; }
+  .toolbox { grid-template-columns: 1fr; }
   .updates li, .entry, .entry:has(.badge) { grid-template-columns: 1fr; gap: 4px; }
   .entry .badge { justify-self: start; margin-top: 6px; }
   .contact-card { padding: 64px 0 72px; }
