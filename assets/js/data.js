@@ -6,96 +6,120 @@
  *
  * Conventions
  *  - Dates use "YYYY-MM" or "YYYY-MM-DD" (used for sorting + display).
- *  - `pinned: true` keeps an item at the top of lists regardless of date.
- *  - Anything marked `TODO` is a placeholder — replace it with real data.
+ *  - Empty lists hide their section (e.g. `hackathons: []`, `articles: []`).
+ *  - Anything marked `TODO` is optional detail you can fill in later.
  * ========================================================================== */
 
 window.PORTFOLIO = {
   /* ---------------------------------------------------------------- SITE */
   site: {
     title: "Mohd Rashid — Software Engineer",
-    description:
-      "Mohd Rashid — software engineer building backend & distributed systems, kernel-level networking with eBPF, and agentic AI.",
     url: "https://mohdrashid9678.github.io",
-    homeLimit: 10, // how many projects / articles to show on the home page
   },
 
   /* ------------------------------------------------------------- PROFILE */
   profile: {
     name: "Mohd Rashid",
     role: "Software Engineer",
-    headline: "Backend · Distributed Systems · Agentic AI",
-    location: "India", // TODO: city, country
-    // Put your photo at assets/img/profile.jpg — falls back to GitHub avatar.
-    photo: "assets/img/profile.jpg",
-    photoFallback: "https://avatars.githubusercontent.com/u/174307556?v=4",
+    company: "Robonito",
+    companyUrl: "https://robonito.com",
+    location: "Aligarh, India",
+    // Drop a square photo at assets/img/profile.jpg and point `photo` at it to override.
+    photo: "https://avatars.githubusercontent.com/u/174307556?v=4&s=400",
     resume: "", // TODO: e.g. "assets/Mohd_Rashid_Resume.pdf" (leave "" to hide)
-    available: true, // shows an "Open to opportunities" badge
-    // Seamless prose paragraphs matching the reference style — covers intro, focus, stack, education, and interests:
+    // Shown as a small "open to" note in the hero. Set to "" to hide.
+    openTo: "Backend, Platform, Distributed Systems & AI Engineering roles",
+    // Large opening line under the name.
+    lede: "I build backend and distributed systems, and like to understand them all the way down to the kernel.",
+    // Body paragraphs (HTML allowed).
     intro: [
-      "I am a software engineer focused on <strong>backend engineering, distributed systems, and agentic AI</strong>. I build high-throughput, observable services primarily with <strong>Go, TypeScript, PostgreSQL, Redis, and AWS</strong>, and dive into first-principles systems work with <strong>C/C++ and eBPF/XDP</strong>.",
-      "I completed my <strong>B.Tech in Computer Science & Engineering (2020–2024)</strong>. Lately, I spend my time engineering autonomous LLM agents that plan, use tools, and act reliably in production, writing technical deep-dives on Substack, and practicing competitive programming.",
+      "I'm a software engineer focused on <strong>backend engineering, distributed systems and AI agents</strong>. Day to day I build scalable, observable services with <strong>Go, TypeScript, PostgreSQL, Redis and AWS</strong>, and I go to first principles with <strong>C and eBPF/XDP</strong> when I want to know what the machine is actually doing.",
+      "Lately I've been engineering autonomous LLM agents that plan, use tools and act reliably in production, writing deep-dives on Substack, and practising competitive programming.",
     ],
   },
 
+  /* ------------------------------------------------------- HIGHLIGHTS */
+  // The numbers strip under the hero. Each one should be backed by a project.
+  highlights: [
+    { value: "50K+", unit: "req/s", label: "sustained throughput", source: "xlink" },
+    { value: "<10", unit: "ms", label: "p95 redirect latency", source: "xlink" },
+    { value: "O(1)", unit: "", label: "packet routing inside the NIC driver", source: "XDP-LB" },
+    { value: "0", unit: "net/http", label: "HTTP/1.1 parsed straight off raw TCP", source: "rhttp" },
+  ],
+
   /* --------------------------------------------------------- UPDATES */
   updates: [
-    { date: "2026-10", text: "Launched this portfolio — writing, projects and hackathons in one place." },
-    { date: "2026-08", text: 'Released <a href="https://github.com/mohdrashid9678/xlink" target="_blank" rel="noopener">xlink</a>, a Go URL shortener sustaining <strong>50K+ req/s</strong> with p95 &lt; 10ms.' },
-    { date: "2026-06", text: 'Built <a href="https://github.com/mohdrashid9678/xdb-lb" target="_blank" rel="noopener">XDP-LB</a>, a kernel-level Layer 4 load balancer using eBPF/XDP.' },
+    { date: "2026-10", text: "Launched this portfolio: projects, writing and problem solving in one place." },
+    { date: "2026-08", text: 'Released <a href="https://github.com/mohdrashid9678/xlink" target="_blank" rel="noopener">xlink</a>, a Go URL shortener sustaining <strong>50K+ req/s</strong> with p95 under 10 ms.' },
+    { date: "2026-06", text: 'Built <a href="https://github.com/mohdrashid9678/xdb-lb" target="_blank" rel="noopener">XDP-LB</a>, a kernel-level Layer 4 load balancer on eBPF/XDP.' },
     { date: "2026-04", text: 'Open-sourced <a href="https://github.com/mohdrashid9678/io-profiler" target="_blank" rel="noopener">io-profiler</a>, an eBPF system I/O profiler with near-zero overhead.' },
   ],
 
   /* ------------------------------------------------------ EXPERIENCE */
-  // TODO: replace with entries from your resume (most recent first).
+  // Most recent first. `end: ""` means Present; `start` may be left "" if you'd rather not show it.
   experience: [
     {
       role: "Software Engineer",
-      company: "Company Name", // TODO
-      url: "",
-      location: "Remote / City", // TODO
-      start: "2024-01", // TODO
-      end: "", // "" = Present
+      company: "Robonito",
+      url: "https://robonito.com",
+      location: "",
+      start: "", // TODO: e.g. "2024-07"
+      end: "",
       points: [
-        "TODO — what you built and the impact (numbers help: latency, throughput, cost, users).",
-        "TODO — systems / AI agents you designed or owned.",
-        "TODO — tooling, reliability or team contributions.",
+        // TODO: 2–3 bullets on what you built and its impact, e.g.
+        // "Designed … that cut p95 latency from X to Y."
       ],
-      tags: ["Go", "TypeScript", "PostgreSQL", "AWS"],
-    },
-    {
-      role: "Software Engineer Intern",
-      company: "Company Name", // TODO
-      url: "",
-      location: "City", // TODO
-      start: "2023-06",
-      end: "2023-12",
-      points: ["TODO — key contribution.", "TODO — key contribution."],
-      tags: ["Node.js", "React"],
+      tags: [],
     },
   ],
 
   /* ------------------------------------------------------- EDUCATION */
-  // Shown as a single compact line per entry in the hero. TODO: replace with your education.
   education: [
     {
-      degree: "B.Tech in Computer Science & Engineering", // TODO
-      school: "University Name", // TODO
+      degree: "B.Tech, Computer Science & Engineering",
+      school: "", // TODO: your university
       url: "",
-      location: "City, India",
       start: "2020",
       end: "2024",
-      details: "TODO — CGPA, relevant coursework (Operating Systems, Computer Networks, DBMS, Distributed Systems), honours.",
+      details: "",
     },
   ],
 
+  /* --------------------------------------------------------- TOOLBOX */
+  skills: [
+    { group: "Languages", items: ["Go", "TypeScript", "C", "C++"] },
+    { group: "Data", items: ["PostgreSQL", "Redis", "Redis Streams"] },
+    { group: "Infrastructure", items: ["AWS", "Docker", "Nginx", "Linux"] },
+    { group: "Observability", items: ["Prometheus", "OpenTelemetry", "Grafana", "Jaeger"] },
+    { group: "Systems", items: ["eBPF", "XDP", "TCP/IP", "HTTP/1.1"] },
+    { group: "AI", items: ["LLM agents", "Tool use", "Evals"] },
+  ],
+
   /* -------------------------------------------------------- PROJECTS */
+  // `pinned: true` = featured on the home page, in the order listed here
+  // (matches the pinned repos on GitHub). The first pinned project gets the
+  // large card; `stats` render as a small table on it.
   projects: [
     {
       title: "xlink",
+      tagline: "URL shortener built for throughput",
       description:
-        "A fast, scalable URL shortener in Go with L1 TinyLFU + L2 Redis caching, singleflight stampede protection, async click analytics via Redis Streams → PostgreSQL, and full Prometheus/OpenTelemetry observability.",
-      metric: "50K+ req/s · p95 < 10ms",
+        "A fast, scalable URL shortener in Go. Redirects are served from an L1 TinyLFU cache backed by L2 Redis, with singleflight coalescing to stop cache stampedes. Click analytics stream through Redis Streams into PostgreSQL in batches, and the whole path is traced with OpenTelemetry.",
+      highlights: [
+        "Multi-tier caching: Ristretto (TinyLFU) in-process, Redis behind it",
+        "Async analytics: Redis Streams → batched PostgreSQL writes",
+        "Prometheus metrics, Jaeger tracing, /livez and /readyz probes",
+      ],
+      stats: [
+        { label: "Throughput", value: "50,000+ req/s" },
+        { label: "p50", value: "~1–2 ms" },
+        { label: "p95", value: "< 10 ms" },
+        { label: "p99", value: "< 50 ms" },
+        { label: "Cache hit", value: "sub-ms" },
+      ],
+      statsNote: "3× c6g.large behind an AWS ALB",
+      metric: "50K+ req/s · p95 < 10 ms",
+      language: "Go",
       tags: ["Go", "Redis", "PostgreSQL", "AWS", "OpenTelemetry"],
       date: "2026-08",
       url: "https://github.com/mohdrashid9678/xlink",
@@ -103,9 +127,11 @@ window.PORTFOLIO = {
     },
     {
       title: "XDP-LB",
+      tagline: "Layer 4 load balancer in the NIC driver",
       description:
-        "A from-scratch Layer 4 load balancer that routes packets inside the NIC driver with eBPF/XDP. C data plane with 5-tuple consistent hashing for TCP stickiness; Go control plane with live kernel telemetry.",
-      metric: "O(1) routing in kernel",
+        "A from-scratch L4 load balancer that routes packets inside the NIC driver with eBPF/XDP. The C data plane hashes the 5-tuple onto a consistent-hash ring for TCP stickiness; a Go control plane loads config and streams live kernel telemetry.",
+      metric: "O(1) in-kernel routing",
+      language: "Go",
       tags: ["eBPF", "XDP", "C", "Go", "Networking"],
       date: "2026-06",
       url: "https://github.com/mohdrashid9678/xdb-lb",
@@ -113,117 +139,84 @@ window.PORTFOLIO = {
     },
     {
       title: "io-profiler",
+      tagline: "Real-time system I/O profiler",
       description:
-        "Real-time system I/O profiler that hooks syscall exit tracepoints to measure actual bytes moved across disk and network, aggregated per-process in kernel BPF maps — no strace-style context-switch tax.",
+        "Hooks syscall-exit tracepoints to count the bytes actually moved across disk and network, aggregated per process in kernel BPF maps. You get a unified view without strace's context-switch tax.",
       metric: "Near-zero overhead",
+      language: "Go",
       tags: ["eBPF", "Go", "C", "Linux"],
       date: "2026-04",
       url: "https://github.com/mohdrashid9678/io-profiler",
+      pinned: true,
     },
     {
       title: "rhttp",
+      tagline: "HTTP/1.1 from raw TCP",
       description:
-        "A minimal HTTP/1.1 implementation (RFC 9112) built directly on raw TCP in Go — request parsing, response building and routing without net/http.",
+        "A minimal HTTP/1.1 implementation (RFC 9112) on raw TCP in Go: request parsing, a response builder over any io.Writer, and a radix-tree router with path parameters, all without net/http.",
       metric: "Zero net/http",
+      language: "Go",
       tags: ["Go", "HTTP", "TCP", "Protocols"],
       date: "2025-09",
       url: "https://github.com/mohdrashid9678/rhttp",
+      pinned: true,
     },
     {
       title: "dcore",
+      tagline: "Distributed-systems primitives for Go",
       description:
-        "High-performance distributed systems primitives and data structures for Go, including consistent hashing.",
+        "Building blocks for distributed systems in Go, starting with consistent hashing with virtual nodes (chash).",
+      language: "Go",
       tags: ["Go", "Distributed Systems", "Data Structures"],
       date: "2025-09",
       url: "https://github.com/mohdrashid9678/dcore",
+      pinned: true,
     },
     {
-      title: "CSES Problem Set Solutions",
-      description: "Solutions to the well-known CSES problem set in C++, covering DP, graphs, trees, range queries and more.",
-      tags: ["C++", "Algorithms", "Competitive Programming"],
+      title: "TiRush",
+      tagline: "Flash-sale event booking",
+      description:
+        "A high-concurrency booking system for flash-sale traffic. It uses optimistic locking in Postgres and Redis distributed locks against double-booking, singleflight and tiered caching against thundering herds, idempotency keys for exactly-once payments, and live seat availability over WebSockets.",
+      status: "In progress",
+      language: "Go",
+      tags: ["Go", "PostgreSQL", "Redis", "WebSockets", "Docker"],
       date: "2026-07",
-      url: "https://github.com/mohdrashid9678/cses-problemset-solution",
+      url: "https://github.com/mohdrashid9678/tirush",
     },
     {
-      title: "mr-algorithms",
-      description: "A personal library of algorithm and data-structure implementations in C++ for contests and interviews.",
-      tags: ["C++", "Algorithms"],
-      date: "2026-03",
-      url: "https://github.com/mohdrashid9678/mr-algorithms",
+      title: "algorithms-by-rashid",
+      tagline: "DSA and contest solutions",
+      description:
+        "My library of data-structure and algorithm implementations, CSES problem-set solutions, and contest solutions from LeetCode, CodeChef, Codeforces and AtCoder.",
+      language: "C++",
+      tags: ["C++", "Algorithms", "Competitive Programming"],
+      date: "2026-11",
+      url: "https://github.com/mohdrashid9678/algorithms-by-rashid",
     },
   ],
 
   /* -------------------------------------------------------- ARTICLES */
-  // Each article links straight to Substack. TODO: replace with real posts.
-  articles: [
-    {
-      title: "Building a URL Shortener that Handles 50K req/s",
-      description: "Multi-tier caching, singleflight and async analytics — the design decisions behind xlink and what the load tests taught me.",
-      tags: ["Go", "System Design", "Performance"],
-      date: "2026-08-20",
-      url: "https://substack.com/", // TODO
-    },
-    {
-      title: "Load Balancing at the NIC: A Practical Intro to XDP",
-      description: "Why the Linux networking stack is slow for L4 routing, and how eBPF/XDP lets you route packets before the kernel even allocates an skb.",
-      tags: ["eBPF", "Networking", "Linux"],
-      date: "2026-06-28",
-      url: "https://substack.com/", // TODO
-    },
-    {
-      title: "What Makes an AI Agent Production-Ready?",
-      description: "Tool design, evals, retries and observability — the unglamorous engineering that separates demos from agents you can trust.",
-      tags: ["Agentic AI", "LLMs", "Engineering"],
-      date: "2026-05-10",
-      url: "https://substack.com/", // TODO
-    },
-    {
-      title: "Writing HTTP/1.1 from Scratch in Go",
-      description: "Parsing requests off a raw TCP socket and what RFC 9112 really asks of a server.",
-      tags: ["Go", "HTTP", "Protocols"],
-      date: "2025-09-15",
-      url: "https://substack.com/", // TODO
-    },
-  ],
+  // Each article links straight to Substack. Until this has entries the
+  // Writing section shows a "Read on Substack" card instead of a list.
+  // Example:
+  // { title: "…", description: "…", tags: ["Go"], date: "2026-11-20", url: "https://rashidalam9678.substack.com/p/…" },
+  articles: [],
 
   /* ------------------------------------------------------ HACKATHONS */
-  // TODO: replace with your hackathons.
-  hackathons: [
-    {
-      name: "Hackathon Name", // TODO
-      organizer: "Organizer", // TODO
-      date: "2025-03",
-      result: "Winner", // e.g. Winner, Finalist, Top 10, Participant
-      project: "Project name",
-      description: "TODO — one or two lines on what you built and the stack.",
-      url: "",
-      tags: ["Agentic AI", "TypeScript"],
-    },
-    {
-      name: "Hackathon Name", // TODO
-      organizer: "Organizer",
-      date: "2024-10",
-      result: "Finalist",
-      project: "Project name",
-      description: "TODO — one or two lines on what you built and the stack.",
-      url: "",
-      tags: ["Go", "Redis"],
-    },
-  ],
+  // Leave empty to hide the section. Example:
+  // { name: "…", organizer: "…", date: "2025-03", result: "Winner", project: "…", description: "…", url: "", tags: [] },
+  hackathons: [],
 
-  /* ---------------------------------------------------------- SOCIAL */
-  // All links show as icon chips in the hero. `kind: "cp"` links are grouped after the social ones;
-  // only `kind: "social"` links appear in the Contact card.
-  // TODO: replace URLs / handles marked below.
+  /* ---------------------------------------------------------- LINKS */
+  // kind "social" → hero, contact & footer. kind "cp" → Problem solving section.
+  // `stat` (optional) shows under a CP profile, e.g. "Rating 1650 · Knight".
   links: [
     { id: "github", label: "GitHub", handle: "mohdrashid9678", url: "https://github.com/mohdrashid9678", kind: "social" },
     { id: "linkedin", label: "LinkedIn", handle: "rashidalam9678", url: "https://www.linkedin.com/in/rashidalam9678/", kind: "social" },
-    { id: "x", label: "Twitter / X", handle: "@handle", url: "https://x.com/", kind: "social" }, // TODO
-    { id: "substack", label: "Substack", handle: "Newsletter", url: "https://substack.com/", kind: "social" }, // TODO
-    { id: "email", label: "Email", handle: "you@example.com", url: "mailto:you@example.com", kind: "social" }, // TODO
-    { id: "leetcode", label: "LeetCode", handle: "handle", url: "https://leetcode.com/", kind: "cp", stat: "" }, // TODO e.g. stat: "Knight · 1900"
-    { id: "codeforces", label: "Codeforces", handle: "handle", url: "https://codeforces.com/", kind: "cp", stat: "" }, // TODO
-    { id: "codechef", label: "CodeChef", handle: "handle", url: "https://www.codechef.com/", kind: "cp", stat: "" }, // TODO
-    { id: "atcoder", label: "AtCoder", handle: "handle", url: "https://atcoder.jp/", kind: "cp", stat: "" }, // TODO
+    { id: "x", label: "X", handle: "@rashidalam9678", url: "https://x.com/rashidalam9678", kind: "social" },
+    { id: "substack", label: "Substack", handle: "@rashidalam9678", url: "https://substack.com/@rashidalam9678", kind: "social" },
+    { id: "email", label: "Email", handle: "mohdrashidalam786@gmail.com", url: "mailto:mohdrashidalam786@gmail.com", kind: "social" },
+    { id: "leetcode", label: "LeetCode", handle: "rashidalam9678", url: "https://leetcode.com/u/rashidalam9678/", kind: "cp", stat: "" },
+    { id: "atcoder", label: "AtCoder", handle: "mohdrashid9678", url: "https://atcoder.jp/users/mohdrashid9678", kind: "cp", stat: "" },
   ],
 };

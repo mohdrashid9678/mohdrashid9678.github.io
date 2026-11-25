@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohd Rashid — Software Engineer · Distributed Systems & Agentic AI</title>
-  <meta name="description" content="Mohd Rashid — software engineer building backend & distributed systems, kernel-level networking with eBPF/XDP, and agentic AI. Projects, writing, experience and hackathons.">
+  <title>Mohd Rashid — Software Engineer · Backend, Distributed Systems & AI Agents</title>
+  <meta name="description" content="Mohd Rashid — software engineer at Robonito building backend and distributed systems in Go, kernel-level networking with eBPF/XDP, and AI agents. Projects, writing and experience.">
   <meta name="author" content="Mohd Rashid">
-  <meta name="theme-color" content="#fbfbf9">
+  <meta name="theme-color" content="#f7f6f2">
   <link rel="canonical" href="https://mohdrashid9678.github.io/">
 
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Mohd Rashid — Software Engineer">
-  <meta property="og:description" content="Backend, distributed systems, eBPF and agentic AI. Projects, writing and experience.">
+  <meta property="og:description" content="Backend, distributed systems, eBPF and AI agents. xlink (50K+ req/s), XDP-LB, io-profiler and more.">
   <meta property="og:url" content="https://mohdrashid9678.github.io/">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/174307556?v=4">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/174307556?v=4&s=400">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@rashidalam9678">
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     /* set theme before paint to avoid a flash */
@@ -31,8 +32,18 @@
       "@type": "Person",
       "name": "Mohd Rashid",
       "jobTitle": "Software Engineer",
+      "worksFor": { "@type": "Organization", "name": "Robonito" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Aligarh", "addressCountry": "IN" },
       "url": "https://mohdrashid9678.github.io/",
-      "sameAs": ["https://github.com/mohdrashid9678", "https://www.linkedin.com/in/rashidalam9678/"]
+      "image": "https://avatars.githubusercontent.com/u/174307556?v=4&s=400",
+      "sameAs": [
+        "https://github.com/mohdrashid9678",
+        "https://www.linkedin.com/in/rashidalam9678/",
+        "https://x.com/rashidalam9678",
+        "https://substack.com/@rashidalam9678",
+        "https://leetcode.com/u/rashidalam9678/",
+        "https://atcoder.jp/users/mohdrashid9678"
+      ]
     }
   </script>
 </head>
@@ -40,56 +51,86 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="site-header"></header>
 
-  <main id="main" class="container">
-    <!-- Hero / intro (rendered from data.js) -->
-    <section class="hero" id="hero" aria-label="Introduction">
-      <div></div>
-      <div><h1>Mohd Rashid</h1><p>Software Engineer — Backend · Distributed Systems · Agentic AI</p></div>
-    </section>
-
-    <!-- Updates (clean list without cards below it) -->
-    <section class="section" id="updates" aria-labelledby="updates-title">
-      <div class="section-head"><h2 id="updates-title">Recent Updates</h2></div>
-      <ul class="updates" id="updates-list"></ul>
-    </section>
-
-    <!-- Experience -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="section-head"><h2 id="experience-title"><span class="num">01</span>Experience</h2></div>
-      <ol class="timeline" id="experience-list"></ol>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-head">
-        <h2 id="projects-title"><span class="num">02</span>Projects</h2>
-        <a class="view-all" id="projects-all" href="projects.html">View all <span class="count"></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <main id="main">
+    <!-- Hero (rendered from data.js; the markup below is the no-JS fallback) -->
+    <section class="hero container" id="hero" aria-label="Introduction">
+      <div class="hero-text">
+        <p class="eyebrow">Software Engineer at Robonito</p>
+        <h1>Mohd Rashid</h1>
+        <p class="lede">I build backend and distributed systems, and like to understand them all the way down to the kernel.</p>
       </div>
-      <p class="section-sub">Systems I've built to understand how things work under the hood.</p>
-      <div class="project-grid" id="projects-grid"></div>
     </section>
 
-    <!-- Writing -->
-    <section class="section" id="writing" aria-labelledby="writing-title">
-      <div class="section-head">
-        <h2 id="writing-title"><span class="num">03</span>Writing</h2>
-        <a class="view-all" id="writing-all" href="writing.html">View all <span class="count"></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <p class="section-sub">Notes and deep-dives on engineering, systems and AI — published on Substack.</p>
-      <ul class="post-list" id="writing-list"></ul>
-    </section>
+    <!-- Numbers strip -->
+    <div class="container highlights" id="highlights" aria-label="Highlights"></div>
 
-    <!-- Hackathons -->
-    <section class="section" id="hackathons" aria-labelledby="hackathons-title">
-      <div class="section-head"><h2 id="hackathons-title"><span class="num">04</span>Hackathons</h2></div>
-      <ol class="hack-list" id="hackathon-list"></ol>
-    </section>
+    <div class="container sections">
+      <!-- Updates -->
+      <section class="section" id="updates" aria-labelledby="updates-title">
+        <header class="section-head">
+          <h2 id="updates-title">Recently</h2>
+        </header>
+        <div class="section-body"><ol class="updates" id="updates-list"></ol></div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <header class="section-head">
+          <h2 id="projects-title">Selected work</h2>
+          <p class="section-sub">Systems I've built to understand how things work under the hood.</p>
+          <a class="view-all" id="projects-all" href="projects.html">All projects <span class="count"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </header>
+        <div class="section-body" id="projects-grid"></div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <header class="section-head">
+          <h2 id="experience-title">Experience</h2>
+          <p class="section-sub">Where I've worked and studied, and the tools I reach for.</p>
+        </header>
+        <div class="section-body split">
+          <div id="experience-list"></div>
+          <div id="skills"></div>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section class="section" id="writing" aria-labelledby="writing-title">
+        <header class="section-head">
+          <h2 id="writing-title">Writing</h2>
+          <p class="section-sub">Notes and deep-dives on engineering, systems and AI.</p>
+          <a class="view-all" id="writing-all" href="writing.html" hidden>All articles <span class="count"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </header>
+        <div class="section-body" id="writing-list"></div>
+      </section>
+
+      <!-- Problem solving -->
+      <section class="section" id="problem-solving" aria-labelledby="cp-title">
+        <header class="section-head">
+          <h2 id="cp-title">Problem solving</h2>
+          <p class="section-sub">Competitive programming keeps the fundamentals sharp.</p>
+        </header>
+        <div class="section-body"><div class="cp-grid" id="cp-grid"></div></div>
+      </section>
+
+      <!-- Hackathons (hidden automatically while the list in data.js is empty) -->
+      <section class="section" id="hackathons" aria-labelledby="hackathons-title">
+        <header class="section-head">
+          <h2 id="hackathons-title">Hackathons</h2>
+        </header>
+        <div class="section-body"><ol class="entries" id="hackathon-list"></ol></div>
+      </section>
+    </div>
 
     <!-- Contact -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-card" id="contact-card"></div>
+    <section class="contact container" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card" id="contact-card">
+        <h2 id="contact-title">Contact</h2>
+        <p><a href="mailto:mohdrashidalam786@gmail.com">mohdrashidalam786@gmail.com</a></p>
+      </div>
     </section>
   </main>
 
